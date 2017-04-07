@@ -1,0 +1,69 @@
+@font-face {
+    /*License: http://kimberlygeswein.com*/
+    font-family: BeautifulEverytime;
+    src: url('BeautifulEverytime.ttf');
+}
+
+body{
+    background-color: #813772;
+    font-family: "Lato","Arial","sans-serif";
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2vw;
+    width: 100%;
+    margin-top: 0px;
+    background-color: black;
+    color: white;
+}
+#intro{
+    height: 40%;
+    /*border: solid 5px #B82601;*/
+}
+
+#menus{
+    display: -webkit-flex;
+    display : flex;
+    height : 16.67%;
+    margin-top: 5px;
+
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B82601;
+    width: 20%;
+    /*border: solid 0.3vw #B82601;*/
+    color: white;
+    margin-right: 0.4vw;
+    font-size: 2.9vw;
+    font-style: italic;
+    font-family: BeautifulEverytime;
+}
+
+#flashcard{
+    margin-top: 0.5vh;
+    margin-left: 0.5vw;
+    display: flex;
+    height: 35%;
+    width: 95vw;
+    background-image: url(./images/danang.jpg);
+    padding: 2vw;
+    color: yellow;
+    font-size: 3vw;
+    justify-content: flex-end;
+}
+
+#flashcard img{
+    opacity: 0.8;
+    height: 90%;
+    width: 32%;
+}
