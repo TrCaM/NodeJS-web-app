@@ -8,7 +8,7 @@ var texts = ["HI, I'M TRI CAO", "I'M FROM VIET NAM",
              "I LOVE TO SING AS WELL", "I USUALLY SING IN VIETNAMESE SHOWS",
              "BUT...", "THERE IS ONLY ONE PERSON...",
              "THAT I LIKE TO SING FOR HER OVERNIGHT...", "JUST LIKE I CAN CODE OVERNIGHT...",
-             "WITH OUT FEELING BORED!!!"];
+             "OH BUT NOT ANYMORE"];
 $(function(){
     // startAgain();
     changeBackground(0);

@@ -3,9 +3,12 @@
     font-family: BeautifulEverytime;
     src: url('BeautifulEveryTime.ttf');
 }
+@font-face {
+    font-family: hors;
+    src: url('hors.otf');
+}
 
 @font-face {
-    /*License: http://kimberlygeswein.com*/
     font-family: score;
     src: url('scoreboard.ttf');
 }
@@ -50,8 +53,8 @@ body{
 
 #restart{
     position: absolute;
-    top: 40%;
-    left: 70%;
+    top: 5%;
+    left: 90%;
     width: 10vw;
     height: 10vh;
     background-color: #154360;
@@ -108,7 +111,7 @@ body{
     margin-bottom: 0.4vh;
     font-size: 2.9vw;
     font-style: italic;
-    font-family: BeautifulEverytime;
+    font-family: hors;
     transition: 0.5s;
 }
 
