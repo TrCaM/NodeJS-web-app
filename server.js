@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 
 const ROOT = "./public";
 
+app.set('port', (process.env.PORT || 5000));
+
 app.set('views', './views');
 app.set('view engine', 'pug');
 
@@ -22,4 +24,6 @@ app.use(express.static(ROOT));
 app.all("*", function(req,res){
     res.sendStatus(404);
 });
-app.listen(1996, function(){console.log("Server listening on port 1996")});
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
