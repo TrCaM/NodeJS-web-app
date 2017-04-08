@@ -9,7 +9,7 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.use(function(req, res, next){
-    console.log(req.method+ " request for "+ req.url);
+    // console.log(req.method+ " request for "+ req.url);
     next();
 });
 
