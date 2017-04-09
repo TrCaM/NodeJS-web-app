@@ -63,14 +63,30 @@ body{
 }
 
 .x{
+    font-family: inherit;
+    font-weight:lighter;
     position: absolute;
     top: -2%;
-    left: 95%;
+    left: 80%;
     font-size: 3vw;
 }
 
 .x:hover{
     font-weight: bold;
+    cursor: pointer;
+}
+.y{
+    font-family: inherit;
+    font-weight:lighter;
+    position: absolute;
+    top: -2%;
+    left: 82%;
+    font-size: 3vw;
+}
+
+.y:hover{
+    font-weight: bold;
+    cursor: pointer;
 }
 
 #restart{
@@ -186,11 +202,103 @@ h4{
 
 #profilePops img{
     position: absolute;
-    width: 30%;
-    height: 50%;
-    top: 2%;
+    width: 40%;
+    height: 93%;
+    top: 5%;
     left: 2%;
 
+}
+
+#contents{
+    position: absolute;
+    width: 53%;
+    height: 93%;
+    top: 5%;
+    left: 45%;
+    /*background-color: blue;*/
+}
+
+#contents ul{
+    position: absolute;
+    height: 60%;
+    width: 100%;
+}
+
+#pages{
+    position: absolute;
+    display: flex;
+    height: 40%;
+    top: 72%;
+    left: 5%;
+    justify-content: center;
+}
+
+hr{
+    height: 1vh;
+    background-color: white;
+    border: none;
+}
+
+
+#pages a img{
+    position: relative;
+    flex-direction: row;
+    margin-right: 4vw;
+    width: 5vw;
+    height: 5vw;
+}
+
+#pages a:hover{
+    cursor: default;
+    text-decoration: underline;
+}
+
+
+#pages a img:hover{
+    cursor: pointer;
+
+}
+
+#contents li.normal{
+    font-family: Arial, san-serif;
+    color: white;
+    margin-bottom: 2vh;
+    background-position: left;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    font-size: 1.5vw;
+    padding-left: 15%;
+    background-size: 1.5vw;
+}
+
+a{
+    font-family: Arial, san-serif;
+    color: white;
+    margin-bottom: 2vh;
+    background-position: left;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    font-size: 1.2vw;
+    padding-left: 15%;
+    background-size: 1.5vw;
+}
+
+a:hover{
+    color: #9e9c47;
+}
+.name{
+    font-family: Arial, san-serif;
+    color: white;
+    margin-bottom: 4vh;
+    background-position: left center;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    font-size: 3vw;
+    padding-left: 15%;
+    background-size: 2vw;
+}
+#contents span{
+    margin-left: 10%;
 }
 
 #popUps {

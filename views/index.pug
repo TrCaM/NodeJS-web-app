@@ -12,8 +12,28 @@ body
         b TRI CAO
     #intro
         #profilePops
-            img#picture(src="./backgrounds/vnFlag.png" alt="Profile pic")
-            a(onclick="$('#profilePops').fadeOut(500)").x &times
+            img(src="./images/pic.jpg" alt="Profile pic")
+            #contents
+                ul(style="list-style-type:none")
+                    li.name(style="background-image: url('./icon/name.png')") Minh Tri Cao
+                    li.normal(style="background-image: url('./icon/job.png')") Software Engineering
+                    li.normal(style="background-image: url('./icon/school.png'); font-size: 1.2vw;background-size: 1.7vw") Second Year Computer Science Student <br/>
+                    a(href="http://carleton.ca/" target="_blank") Carleton University <br/><br/>
+                    li.normal(style="background-image: url('./icon/home.png'); font-size: 1.2vw;background-size: 1.7vw") 152 Whitestone, Ottawa, ON, Canada
+                    li.normal(style="background-image: url('./icon/phone.png'); font-size: 1.2vw;background-size: 1.7vw") +1 613 851 6363
+                    li.normal(style="background-image: url('./icon/mail.png'); font-size: 1.2vw;background-size: 1.7vw") TriCao@cmail.carleton.ca
+                    hr
+                #pages
+                    a(href="https://www.facebook.com/cao.minhtri.583" target="_blank")
+                        img(src="./icon/facebook.png" alt="Facebook logo")
+                        //- hr(style="background-color: #45619D; display: none;")
+                    a(href="https://github.com/TrCaM" target="_blank")
+                        img(src="./icon/github.png" alt="Github logo")
+                        //- hr(style="background-color: #BF5B94; display: none")
+                    a(href="https://www.linkedin.com/in/tri-cao-64723313a/" target="_blank")
+                        img(src="./icon/linkedin.png" alt="LinkedIn logo")
+                        //- hr(style="background-color: #0077B5; display: none")
+            a(onclick="$('#profilePops').fadeOut(500)").y &times
         #popUps
             div
                 h1 Thank you for visiting! 
