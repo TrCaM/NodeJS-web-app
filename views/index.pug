@@ -7,18 +7,42 @@ head
     
 body
     #bg
-    
+        #picture
+            img(src="./backgrounds/vnFlag.png" alt="Profile pic")
     #header
         b TRI CAO
     #intro
-        p.text
+        #profilePops
+             a(onclick="$('#profilePops').fadeOut(500)").x &times
+        #popUps
+            div
+                h1 Thank you for visiting! 
+                h4 Have a question? Please fill out this form 
+            p#failure Oopsie...message not sent.  
+            p#success Your message was sent successfully. Thank you!
+            form(method="post" action="/feedback")
+                div
+                    label(for="name")
+                        span.required Name: *
+                        input(type="text" id="name" name="name" placeholder="Your Name" required="required" tabindex="1" autofocus="autofocus")
+                div
+                    label(for="email")
+                        span.required Email: *
+                        input(type="email" id="email" name="email" placeholder="Your Email" tabindex="2" required="required")  
+                div
+                    label(for="message")
+                        span.required Message: *
+                        textarea(id="message" name="message" placeholder="Please write your message here." tabindex="5" required="required")
+                div
+                    button(name="submit" type="submit" id="submit") SEND 
+            a(onclick="$('#popUps').fadeOut(500)").x &times
     #menus
-        .item Profile
-        .item Resume
-        .item Projects
-        .item Researches
-        .item Music-covers
-        .item Feedback
+        .item#profile(onclick="$('#profilePops').fadeIn(500)") Profile
+        .item#resume Resume
+        .item#projects Projects
+        .item#research Research
+        .item#chat Chat
+        .item#feedback(onclick="$('#popUps').fadeIn(500); $('#delete').remove()") Feedback
     #show
         
     

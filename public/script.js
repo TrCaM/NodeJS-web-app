@@ -13,6 +13,17 @@ $(function(){
     // startAgain();
     changeBackground(0);
     typeQuote(0);
+
+    // handle submitted feedbacks
+    var form = $('form');
+    form.submit(function(e){
+        // Prevent default functionality
+        e.preventDefault();
+        //
+        $.post('/feedback', $(this).serialize(), function(data){
+            $('#popUps').append($("<h4 id='delete'>Thank you "+data.name+"! <br>Your message was sent </h4>"));
+        }, 'json');
+    });
 });
 
 
