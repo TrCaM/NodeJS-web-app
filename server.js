@@ -1,9 +1,12 @@
 var express = require('express');
+var http = require('http');
 var app = express();
 var hat = require('hat');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var MongoClient = require('mongodb').MongoClient;
+var server = http.createServer(app);
+var io = require('socket.io')(server);
 const ROOT = "./public";
 
 app.set('port', (process.env.PORT || 5000));
@@ -23,7 +26,7 @@ MongoClient.connect("mongodb://Tri:1234@ds155490.mlab.com:55490/tricao", functio
     }else{
         console.log('CONNECTED TO DATABASE');
         db = database;
-        app.listen(app.get('port'), function() {
+        server.listen(app.get('port'), function() {
           console.log('Node app is running on port', app.get('port'));
         });
     }
@@ -96,13 +99,67 @@ app.post("/feedback", function(req,res){
     });
 });
 
+app.get("/chat",cookieParser(), function(req,res){
+    db.collection("users").findOne({username:req.cookies.username},function(err,user){ //assume unique usernames.
+        if(user && user.auth===req.cookies.token){
+            console.log("User authenticated.");
+            res.render('chat',{user: {username:req.cookies.username, auth:user.auth}});
+        }else{
+            res.render('index',{warning: "Please log in to chat"});
+        }
+    });
+});
+
+var clients= [];
+
+io.on("connection", function(socket){
+	console.log("Got a connection");
+	socket.on("intro",function(data){
+		socket.username = data;
+		clients.push(socket);
+		socket.broadcast.emit("message", timestamp()+": "+socket.username+" has entered the chatroom.");
+		io.emit("userList", {users: getUserList()});
+		socket.emit("message","Welcome, "+socket.username+".");
+	});
+
+	socket.on("message", function(data){
+		console.log("got message: "+data);
+		for (var i in clients){
+			if (socket !== clients[i] && (!clients[i].blocks || !clients[i].blocks.includes(socket.username))){
+				clients[i].emit("message",timestamp()+", "+socket.username+": "+data);
+			}
+		}
+	});
+
+	socket.on("disconnect", function(){
+		console.log(socket.username+" disconnected");
+		io.emit("message", timestamp()+": "+socket.username+" disconnected.");
+		clients = clients.filter(function(ele){
+       		return ele!==socket;
+		});
+		io.emit("userList", {users: getUserList()});
+	});
+});
+
+
 app.use(express.static(ROOT));
 
 app.all("*", function(req,res){
     res.sendStatus(404);
 });
 
-// Chat routes
+
+function timestamp(){
+	return new Date().toLocaleTimeString();
+}
+
+function getUserList(){
+    var ret = [];
+    for(var i=0;i<clients.length;i++){
+        ret.push(clients[i].username);
+    }
+    return ret;
+}
 
 
 function createAuthCookies(user,res){

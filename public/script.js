@@ -31,6 +31,14 @@ $(function(){
         $('#warning').remove();
     });
 
+    // hangle chat press
+    $('#chat').click(function(){
+        window.location.replace("http://localhost:5000/chat")
+    });
+    $('#main').click(function(){
+        window.location.replace("http://localhost:5000/")
+    });
+
 });
 
 

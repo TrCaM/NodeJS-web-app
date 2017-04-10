@@ -11,11 +11,11 @@ body
     #header
         if user && user.auth
             .box <span>Hi #{user.username}</span>
-            .box <span><b> TRI CAO </b></span>
+            .box#main <span> <b> TRI CAO </b></span>    
             .box#out <span><a href="/logout"> log out <a></span>
         else
             .box <span></span>
-            .box <span><b> TRI CAO </b></span>
+            .box#main <span> <b> TRI CAO </b></span>
             .box#in <span><nav> login <nav></span>
     #intro
         if warning
