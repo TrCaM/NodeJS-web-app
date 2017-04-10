@@ -1,0 +1,27 @@
+head
+    title There's my website
+    link(rel="stylesheet" href="./style.css")
+    link(rel="shortcut icon" href="/favicon.ico")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="./chat.js")
+    script(src="/socket.io/socket.io.js")
+body
+    #bg
+        
+    #header
+        if user && user.auth
+            .box#name <span>Hi #{user.username}</span>
+            .box#main <span> <b> TRI CAO </b></span>
+            .box#out <span><a href="/logout"> log out <a></span>
+        else
+            .box <span></span>
+            .box#main <span> <b> TRI CAO </b></span>
+            .box#in <span><nav> login <nav></span>
+    #intro
+        #roomList 
+            p ROOM LIST
+            ul
+        #chatLog
+            textarea(disabled)
+        #input
+            textarea(placeholder="Enter your message here")
