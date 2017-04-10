@@ -33,10 +33,10 @@ $(function(){
 
     // hangle chat press
     $('#chat').click(function(){
-        window.location.replace("http://localhost:5000/chat")
+        window.location.replace("https://frozen-falls-39454.herokuapp.com/chat")
     });
     $('#main').click(function(){
-        window.location.replace("http://localhost:5000/")
+        window.location.replace("https://frozen-falls-39454.herokuapp.com/")
     });
 
 });
