@@ -9,8 +9,44 @@ body
     #bg
         
     #header
-        b TRI CAO
+        if user && user.auth
+            .box <span>Hi #{user.username}</span>
+            .box <span><b> TRI CAO </b></span>
+            .box#out <span><a href="/logout"> log out <a></span>
+        else
+            .box <span></span>
+            .box <span><b> TRI CAO </b></span>
+            .box#in <span><nav> login <nav></span>
     #intro
+        if warning
+            #loginTable
+                form(method="post" action="/login")
+                    div
+                        label(for="username")
+                            span.required Username:
+                            input(type="text" id="username" name="username" placeholder="Enter username" required="required" tabindex="1" autofocus="autofocus")
+                    div
+                        label(for="password")
+                            span.required Password:
+                            input(type="password" id="password" name="password" placeholder="Enter password" tabindex="2" required="required")  
+                    div
+                        button(name="submit" type="submit" id="submit") LOG IN
+                    br
+                    #warning=warning
+                        
+        else    
+            #loginTable(style="display:none")
+                form(method="post" action="/login")
+                    div
+                        label(for="username")
+                            span.required Username:
+                            input(type="text" id="username" name="username" placeholder="Enter username" required="required" tabindex="1" autofocus="autofocus")
+                    div
+                        label(for="password")
+                            span.required Password:
+                            input(type="password" id="password" name="password" placeholder="Enter password" tabindex="2" required="required")  
+                    div
+                        button(name="submit" type="submit" id="submit") LOG IN
         #profilePops
             img(src="./images/pic.jpg" alt="Profile pic")
             #contents
@@ -40,7 +76,7 @@ body
                 h4 Have a question? Please fill out this form 
             p#failure Oopsie...message not sent.  
             p#success Your message was sent successfully. Thank you!
-            form(method="post" action="/feedback")
+            form(method="post" action="/feedback")#form2
                 div
                     label(for="name")
                         span.required Name: *

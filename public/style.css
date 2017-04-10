@@ -1,4 +1,4 @@
-@font-face {
+submit@font-face {
     /*License: http://kimberlygeswein.com*/
     font-family: BeautifulEverytime;
     src: url('BeautifulEveryTime.ttf');
@@ -50,11 +50,42 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2vw;
+    height: 2.5vw;
     width: 100%;
     margin-top: 0px;
     background-color: black;
     color: white;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.box:first-child > span { margin-right: auto; }
+.box:last-child > span { margin-left: auto; }
+
+.box span b{
+    font-size: 2vw;
+    letter-spacing: 0.5vw;
+}
+#in, #out{
+    font-family: Arial, san-serif;
+    color: white;
+    background-position: left;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    font-size: 1.5vw;
+    padding-left: 15%;
+    background-size: 1.5vw;
+}
+#out:hover{
+    color: #9e9c47;
+    cursor: pointer;
+}
+#in:hover{
+    color: #9e9c47;
+    cursor: pointer;
 }
 #intro{
     height: 75%;
@@ -89,6 +120,93 @@ body{
     cursor: pointer;
 }
 
+#loginTable{
+    position: absolute;
+    background-color: black;
+    width: 25%;
+    height: 25%;
+    top: 4%;
+    left: 75%;
+    z-index: 10;
+    font-family: Arial, san-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2vw;
+    padding-left: 3vw;
+}
+
+#loginTable form{
+    margin-top: 2vh;
+}
+
+#loginTable input,
+#loginTable select,
+#loginTable textarea,
+#loginTable label {
+   font-size: 15px;
+   margin-bottom: 2px;
+   font-family: Arial, san-serif;
+}
+#loginTable input,
+#loginTable select,
+#loginTable textarea {
+   width:50%;
+   background: #fff;
+   border: 0;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 4px;
+   margin-bottom: 25px;
+   margin-left: 3vw;
+   padding: 5px;
+}
+#loginTable input:focus,
+#loginTable select:focus,
+#loginTable textarea:focus {
+   background-color: #E5E6E7;
+}
+#loginTable textarea {
+   width:50%;
+   height: 150px;
+}
+#loginTable button[type="submit"] {
+   cursor:pointer;
+   width:90%;
+   border:none;
+   background:#991D57;
+   background-image:linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
+   background-image:-moz-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
+   background-image:-webkit-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
+   color:#FFF;
+   margin:0 0 5px;
+   padding:10px;
+   border-radius:5px;
+}
+#loginTable button[type="submit"]:hover {
+   background-image:linear-gradient(bottom, #9C215A 0%, #A82767 52%);
+   background-image:-moz-linear-gradient(bottom, #9C215A 0%, #A82767 52%);
+   background-image:-webkit-linear-gradient(bottom, #9C215A 0%, #A82767 52%);
+   -webkit-transition:background 0.3s ease-in-out;
+   -moz-transition:background 0.3s ease-in-out;
+   transition:background-color 0.3s ease-in-out;
+}
+#loginTable button[type="submit"]:active {
+   box-shadow:inset 0 1px 3px rgba(0,0,0,0.5);
+}
+input:required, textarea:required {
+   box-shadow: none;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   -o-box-shadow: none;
+}
+#loginTable .required {
+   font-weight:bold;
+   color: #E5E6E7;
+}
+
+#warning{
+    color: red;
+}
 #restart{
     position: absolute;
     top: 5%;

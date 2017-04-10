@@ -15,7 +15,7 @@ $(function(){
     typeQuote(0);
 
     // handle submitted feedbacks
-    var form = $('form');
+    var form = $('#form2');
     form.submit(function(e){
         // Prevent default functionality
         e.preventDefault();
@@ -24,6 +24,13 @@ $(function(){
             $('#popUps').append($("<h4 id='delete'>Thank you "+data.name+"! <br>Your message was sent </h4>"));
         }, 'json');
     });
+
+    // handle login press
+    $('#in').click(function(){
+        $('#loginTable').toggle();
+        $('#warning').remove();
+    });
+
 });
 
 
