@@ -23,6 +23,7 @@ MongoClient.connect("mongodb://Tri:1234@ds155490.mlab.com:55490/tricao", functio
     if(err){
         console.log('FAILED TO CONNECT TO DATABASE');
         throw error;
+        
     }else{
         console.log('CONNECTED TO DATABASE');
         db = database;

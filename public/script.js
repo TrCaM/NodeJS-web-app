@@ -1,14 +1,14 @@
-var backgrounds =["vnFlag.png","halong.jpg","code.jpg","code2.jpg", "league.jpg", "piano.jpg","sing.jpg  ","brokenheart.png", "love2.jpg", "candle.jpg", "stars.jpg"];
-var texts = ["HI, I'M TRI CAO", "I'M FROM VIET NAM",
-             "MY COUNTRY IS BEAUTIFUL", "THIS IS HA LONG BAY",
-             "I LIKE COMPUTER SCIENCE", "CODING IS VERY FUN",
-             "ALGORITHMS ARE ALSO INTERESTING", "BUT THEY ARE VERY HARD",
-             "I PLAY LEAGUE OF LEGENDS AFTER WORK", "ONLY AFTER WORK I PROMISE...",
-             "I LOVE MUSIC", "I WILL LEARN SOME INSTRUMENTS SOON",
-             "I LOVE TO SING AS WELL", "I USUALLY SING IN VIETNAMESE SHOWS",
-             "BUT...", "THERE IS ONLY ONE PERSON...",
-             "THAT I LIKE TO SING FOR HER OVERNIGHT...", "JUST LIKE I CAN CODE OVERNIGHT...",
-             "OH BUT NOT ANYMORE"];
+var backgrounds =["vnFlag.png","Carleton.jpg","code.jpg","Algorithm.jpg", "league.jpg", "piano.jpg","sing.jpg  ","brokenheart.png", "love2.jpg", "candle.jpg", "stars.jpg"];
+var texts = ["HI, I'M TRI CAO", "I COME FROM VIET NAM",
+             "I'M SECOND YEAR STUDENT IN CARLETON U", "I AM ALSO A TEACHING ASSISTANT",
+             "I LIKE COMPUTER SCIENCE", "OBJECT ORIENTED PROGRAMMING AND WEB ARE MY STRENGTH",
+             "I LIKE ALGORITHMS AND DATA STRUCTURES", "I AM DOING A RESEARCH ON RANGE SEARCHING",
+             "I AM ALWAYS EAGER TO CHALLENGE MYSELF", "I CAN QUICKLY ADAPT TO NEW TECHNOLOGIES",
+             "AZURE, SQL, ANGULAR...", "ARE SOME OF WHAT I AM LEARNING THESE DAYS",
+             "AT NIGHT, I SING TO MAKE SOME MONEY TOO", "I USUALLY SING IN VIETNAMESE SHOWS",
+             "I AM FLEXIBLE, PROACTIVE AND SMART", "AND I WILL NEVER STOP IMPROVING",
+             "LIFE IS LEARNING", "AND I ENJOY LEARNING ABOUT TECHNOLOGIES",
+             "IT'S ABOUT ME, 'TREEE' CAO"];
 $(function(){
     // startAgain();
     changeBackground(0);
@@ -39,6 +39,9 @@ $(function(){
         window.location.replace("https://frozen-falls-39454.herokuapp.com/")
     });
 
+    $('#resume').click(function(){
+        window.location.replace("https://drive.google.com/file/d/0B8snwWQWjzVmX2QzMEJUMUJyaFk/view?usp=sharing")
+    });
 });
 
 
@@ -73,7 +76,7 @@ function typeQuote(i){
     var time = 0;
     quote.text(display+"_");
     var animation = setInterval(function(){
-        time += 100;
+        time += 70;
         display += texts[i].charAt(index);
         quote.text(display+"_");
         if(index< texts[i].length)
@@ -94,7 +97,7 @@ function typeQuote(i){
 
         }
 
-    }, 100);
+    }, 70);
 }
 
 function startAgain(){
