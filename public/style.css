@@ -1,16 +1,16 @@
 submit@font-face {
     /*License: http://kimberlygeswein.com*/
     font-family: BeautifulEverytime;
-    src: url('BeautifulEveryTime.ttf');
+    src: url('/BeautifulEveryTime.ttf');
 }
 @font-face {
     font-family: hors;
-    src: url('hors.otf');
+    src: url('/hors.otf');
 }
 
 @font-face {
     font-family: score;
-    src: url('scoreboard.ttf');
+    src: url('/scoreboard.ttf');
 }
 
 @keyframes animatedBackground {
