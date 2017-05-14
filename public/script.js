@@ -40,7 +40,8 @@ $(function(){
     });
 
     $('#resume').click(function(){
-        window.location.replace("https://drive.google.com/file/d/0B8snwWQWjzVmX2QzMEJUMUJyaFk/view?usp=sharing")
+        var win = window.open("https://drive.google.com/file/d/0B8snwWQWjzVmX2QzMEJUMUJyaFk/view?usp=sharing", '_blank');
+        win.focus();
     });
 });
 
